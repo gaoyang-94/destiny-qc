@@ -71,6 +71,22 @@ evidence pack and a code commit behind it.
 | `sample_chart.json` | Real chart engine output used as fixture |
 | `evidence/` | Sealed Kane evidence packs from the demo runs |
 
+## What it is (one paragraph)
+
+Destiny QC is a closed-loop quality gate for AI-generated Chinese astrology (Zi Wei Dou Shu)
+reports. A content agent (Hermes / Claude Code driving DeepSeek) writes 3,000-character
+readings from a chart engine; Kane CLI then walks the acceptance spec in a real browser —
+birth-info bar, eight required sections, banned phrases, length floor — and returns a
+structured verdict. On failure the verdict's root cause and culprit step go back to the
+agent, which rewrites and resubmits, up to three rounds before escalating to a human.
+It was built for a one-person report business and found two real defects in the production
+app on day one.
+
+**Live app under test:** http://107.175.133.225:8600/ (charting web app, Chinese UI)
+**Judge notes:** the report side runs without any login (`python3 report_gen.py` then open
+`out/report.html`). Kane CLI runs need a free TestMu AI account — see `tests/` for what it
+executes.
+
 ## Quick start
 
 ```bash
