@@ -81,5 +81,9 @@ python3 qc_loop.py --demo-seed-defect   # watch Kane catch a planted bug, then w
 
 ## Demo
 
-Video: (link) — 3 minutes: one planted defect, one Kane failure with root cause, one
-agent fix, one green run.
+Video (3:15): `demo/destiny-qc-demo.mp4` — one planted defect, two Kane failures with root
+causes, agent fixes, one green run, then the same rig finding a real bug in the product.
+
+Launch posts:
+- https://x.com/chuchouji/status/2122208447928336846
+- https://x.com/chuchouji/status/2122209668256977379
