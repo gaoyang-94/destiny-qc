@@ -1,0 +1,25 @@
+{
+  "executions": [
+    {
+      "execution_id": "0df172c5-6f70-4a04-af0d-2969b7319460",
+      "run_kind": "author",
+      "status": "failed",
+      "valid": true,
+      "at": "2026-11-16T05:27:28.125Z"
+    },
+    {
+      "execution_id": "42045ee7-8b0f-4295-8ac1-46eb1dd746b6",
+      "run_kind": "author",
+      "status": "failed",
+      "valid": true,
+      "at": "2026-11-16T05:30:43.626Z"
+    },
+    {
+      "execution_id": "4c7ae45c-2cee-4711-aae4-3f2bcbdb20ea",
+      "run_kind": "author",
+      "status": "passed",
+      "valid": true,
+      "at": "2026-11-16T05:33:58.319Z"
+    }
+  ]
+}

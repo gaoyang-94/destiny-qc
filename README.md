@@ -39,6 +39,26 @@ failed run produces a machine-readable verdict that the writing agent consumes d
 3. **Runtime gate** — `qc_loop.py` is the shipping gate: no report leaves the pipeline
    without a sealed Kane evidence pack showing green.
 
+## What Kane caught (real findings, not a staged demo)
+
+Both findings below came from actual runs on a production Next.js app; each has a sealed
+evidence pack and a code commit behind it.
+
+1. **Report info bar silently dropped 四柱.** The generator emitted four of the five
+   required birth-info items. Kane's preview flow caught it on the rendered page
+   (`The report header does not show all five required pieces of birth information`),
+   the fix agent read that verdict, rewrote the report, and the re-run exposed a second
+   issue (body under the 2000-character floor) before going green on round 3.
+2. **The web chart's centre cell was missing 四柱 / 命主 / 身主** even though the PNG
+   renderer already showed them. Kane's 7-step journey test failed only at the
+   centre-cell assertion (`The chart rendered its 12-palace layout, but the center cell
+   did not provide all of the required chart details`). We fixed the component, rebuilt,
+   and the same test then passed 7/7.
+3. The suite also caught **its own ambiguity**: Kane's bug verdict classified one failure
+   as `automation_bug / agent_misstep` because the step text let 命宫/身宫 stand in for
+   命主/身主. The step was rewritten to assert the two rows separately — a nice example
+   of the verification layer auditing the spec, not just the app.
+
 ## Repo layout
 
 | Path | What it is |
